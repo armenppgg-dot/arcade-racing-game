@@ -159,9 +159,11 @@ body {
 
 .opponent {
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.24) 0 10%, transparent 10% 90%, rgba(0, 0, 0, 0.18) 90% 100%),
-    linear-gradient(#7dff9a 0 18%, #47fb78 18% 72%, #168d45 72% 100%);
-  border: 2px solid #d5ffe2;
+    linear-gradient(90deg, rgba(255, 255, 255, 0.42) 0 10%, transparent 10% 90%, rgba(0, 0, 0, 0.3) 90% 100%),
+    linear-gradient(#9dffb4 0 18%, #4cff81 18% 72%, #0f7438 72% 100%);
+  border: 2px solid #eefff4;
+  opacity: 1;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.45);
 }
 
 .flag {
