@@ -67,17 +67,19 @@ function startEngineSound() {
   engineGain = audioCtx.createGain();
   engineFilter = audioCtx.createBiquadFilter();
 
-  engineOsc.type = "triangle";
-  engineOscLayer.type = "sine";
+  engineOsc.type = "sine";
+  engineOscLayer.type = "triangle";
 
-  engineOsc.frequency.value = 88;
-  engineOscLayer.frequency.value = 44;
+  engineOsc.frequency.value = 96;
+  engineOscLayer.frequency.value = 48;
 
   engineFilter.type = "lowpass";
-  engineFilter.frequency.value = 420;
-  engineFilter.Q.value = 0.6;
+  engineFilter.frequency.value = 520;
+  engineFilter.Q.value = 0.5;
 
-  engineGain.gain.value = 0.022;
+  const now = audioCtx.currentTime;
+  engineGain.gain.setValueAtTime(0.0001, now);
+  engineGain.gain.exponentialRampToValueAtTime(0.04, now + 0.25);
 
   engineOsc.connect(engineFilter);
   engineOscLayer.connect(engineFilter);
@@ -103,10 +105,10 @@ function stopEngineSound() {
 
 function updateEnginePitch() {
   if (!engineOsc) return;
-  const pitch = 84 + state.worldSpeed * 11;
+  const pitch = 90 + state.worldSpeed * 9;
   engineOsc.frequency.setTargetAtTime(pitch, audioCtx.currentTime, 0.08);
   engineOscLayer.frequency.setTargetAtTime(pitch * 0.5, audioCtx.currentTime, 0.1);
-  engineFilter.frequency.setTargetAtTime(360 + state.worldSpeed * 28, audioCtx.currentTime, 0.12);
+  engineFilter.frequency.setTargetAtTime(460 + state.worldSpeed * 24, audioCtx.currentTime, 0.12);
 }
 
 function resetGame() {
