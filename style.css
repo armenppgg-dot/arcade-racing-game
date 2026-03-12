@@ -91,7 +91,7 @@ body {
 
 .road {
   position: absolute;
-  inset: 0;
+  inset: -110px 0 0;
   background: linear-gradient(90deg, #1b232e 0 7%, #5f6268 7% 93%, #1b232e 93%);
   animation: roadScroll 0.9s linear infinite;
   opacity: 0.92;
