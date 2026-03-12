@@ -98,31 +98,6 @@ body {
   z-index: 1;
 }
 
-.game-area::before,
-.game-area::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: #ffffff;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.game-area::before {
-  left: 0;
-}
-
-.game-area::after {
-  right: 0;
-}
-
-.road::before,
-.road::after {
-  content: none;
-}
-
 @keyframes roadScroll {
   from { transform: translateY(0); }
   to { transform: translateY(110px); }
