@@ -159,11 +159,11 @@ body {
 
 .opponent {
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.42) 0 10%, transparent 10% 90%, rgba(0, 0, 0, 0.3) 90% 100%),
-    linear-gradient(#9dffb4 0 18%, #4cff81 18% 72%, #0f7438 72% 100%);
-  border: 2px solid #eefff4;
+    linear-gradient(90deg, rgba(255, 255, 255, 0.55) 0 10%, transparent 10% 90%, rgba(0, 0, 0, 0.45) 90% 100%),
+    linear-gradient(#ffd95a 0 18%, #ff8a00 18% 72%, #b43f00 72% 100%);
+  border: 2px solid #fff2c2;
   opacity: 1;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.65), 0 6px 12px rgba(0, 0, 0, 0.35);
 }
 
 .flag {
@@ -171,9 +171,10 @@ body {
   height: 28px;
   border-radius: 4px;
   background:
-    linear-gradient(90deg, #ffffff 0 50%, #ff1a55 50% 100%),
-    linear-gradient(180deg, transparent 0 34%, #ffeef2 34% 66%, transparent 66%);
-  border: 2px solid #fff;
+    linear-gradient(90deg, #ffe84c 0 50%, #1a1a1a 50% 100%),
+    linear-gradient(180deg, transparent 0 34%, rgba(255, 255, 255, 0.55) 34% 66%, transparent 66%);
+  border: 2px solid #fff7ba;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.7), 0 3px 8px rgba(0, 0, 0, 0.35);
 }
 
 .overlay {
