@@ -120,10 +120,13 @@ body {
 .opponent {
   width: 52px;
   height: 88px;
+  border-radius: 12px 12px 10px 10px;
 }
 
 .player {
-  background: linear-gradient(#ff3067, #b90049);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.26) 0 10%, transparent 10% 90%, rgba(0, 0, 0, 0.18) 90% 100%),
+    linear-gradient(#ff5b86 0 18%, #ff3067 18% 72%, #b90049 72% 100%);
   border: 2px solid #ffd4e3;
   bottom: 18px;
   left: 50%;
@@ -135,28 +138,35 @@ body {
 .opponent::before {
   content: "";
   position: absolute;
-  left: 9px;
-  right: 9px;
-  top: 8px;
-  height: 24px;
-  border-radius: 7px;
-  background: #9be9ff;
+  left: 8px;
+  right: 8px;
+  top: 10px;
+  height: 22px;
+  border-radius: 9px 9px 6px 6px;
+  background:
+    linear-gradient(180deg, rgba(232, 251, 255, 0.95) 0 40%, rgba(109, 194, 235, 0.95) 40% 100%);
+  border: 1px solid rgba(210, 246, 255, 0.9);
 }
 
 .player::after,
 .opponent::after {
   content: "";
   position: absolute;
-  left: 13px;
-  right: 13px;
-  bottom: 10px;
-  height: 18px;
-  background: rgba(255, 240, 143, 0.8);
-  border-radius: 4px;
+  left: 9px;
+  right: 9px;
+  bottom: 8px;
+  height: 14px;
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 14% 50%, #ffe88a 0 24%, transparent 24% 100%),
+    radial-gradient(circle at 86% 50%, #ffe88a 0 24%, transparent 24% 100%),
+    linear-gradient(90deg, transparent 0 26%, rgba(255, 255, 255, 0.28) 26% 74%, transparent 74% 100%);
 }
 
 .opponent {
-  background: linear-gradient(#47fb78, #168d45);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.24) 0 10%, transparent 10% 90%, rgba(0, 0, 0, 0.18) 90% 100%),
+    linear-gradient(#7dff9a 0 18%, #47fb78 18% 72%, #168d45 72% 100%);
   border: 2px solid #d5ffe2;
 }
 
