@@ -163,6 +163,9 @@ body {
     linear-gradient(#ffd95a 0 18%, #ff8a00 18% 72%, #b43f00 72% 100%);
   border: 2px solid #fff2c2;
   opacity: 1;
+  filter: none;
+  mix-blend-mode: normal;
+  z-index: 4;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.65), 0 6px 12px rgba(0, 0, 0, 0.35);
 }
 
@@ -174,6 +177,10 @@ body {
     linear-gradient(90deg, #ffe84c 0 50%, #1a1a1a 50% 100%),
     linear-gradient(180deg, transparent 0 34%, rgba(255, 255, 255, 0.55) 34% 66%, transparent 66%);
   border: 2px solid #fff7ba;
+  opacity: 1;
+  filter: none;
+  mix-blend-mode: normal;
+  z-index: 4;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.7), 0 3px 8px rgba(0, 0, 0, 0.35);
 }
 
