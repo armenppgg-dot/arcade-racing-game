@@ -97,6 +97,36 @@ body {
   opacity: 0.92;
 }
 
+.road::before,
+.road::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 7%;
+  background-size: 100% 72px;
+  background-repeat: repeat-y;
+  animation: roadScroll 0.9s linear infinite;
+}
+
+.road::before {
+  left: 0;
+  background-image:
+    radial-gradient(circle at 50% 22px, #6cff89 0 16px, transparent 16px),
+    linear-gradient(#8d5f2a 0 100%);
+  background-size: 100% 72px, 6px 72px;
+  background-position: center 0, center 0;
+}
+
+.road::after {
+  right: 0;
+  background-image:
+    radial-gradient(circle at 50% 22px, #6cff89 0 16px, transparent 16px),
+    linear-gradient(#8d5f2a 0 100%);
+  background-size: 100% 72px, 6px 72px;
+  background-position: center 36px, center 36px;
+}
+
 @keyframes roadScroll {
   from { transform: translateY(0); }
   to { transform: translateY(110px); }
