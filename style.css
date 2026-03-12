@@ -95,6 +95,7 @@ body {
   background: linear-gradient(90deg, #1b232e 0 7%, #5f6268 7% 93%, #1b232e 93%);
   animation: roadScroll 0.9s linear infinite;
   opacity: 0.92;
+  z-index: 1;
 }
 
 .game-area::before,
@@ -103,9 +104,10 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 7%;
+  width: 3px;
   background: #ffffff;
   pointer-events: none;
+  z-index: 2;
 }
 
 .game-area::before {
