@@ -111,20 +111,12 @@ body {
 
 .road::before {
   left: 0;
-  background-image:
-    radial-gradient(circle at 50% 22px, #6cff89 0 16px, transparent 16px),
-    linear-gradient(#8d5f2a 0 100%);
-  background-size: 100% 72px, 6px 72px;
-  background-position: center 0, center 0;
+  background: linear-gradient(#8d5f2a 0 100%);
 }
 
 .road::after {
   right: 0;
-  background-image:
-    radial-gradient(circle at 50% 22px, #6cff89 0 16px, transparent 16px),
-    linear-gradient(#8d5f2a 0 100%);
-  background-size: 100% 72px, 6px 72px;
-  background-position: center 36px, center 36px;
+  background: linear-gradient(#8d5f2a 0 100%);
 }
 
 @keyframes roadScroll {
