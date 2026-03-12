@@ -57,31 +57,56 @@ function createTone({ freq = 200, duration = 0.12, type = "sine", volume = 0.06,
 
 let engineOsc = null;
 let engineGain = null;
+let engineOscLayer = null;
+let engineFilter = null;
 
 function startEngineSound() {
   if (!state.audioEnabled || engineOsc) return;
   engineOsc = audioCtx.createOscillator();
+  engineOscLayer = audioCtx.createOscillator();
   engineGain = audioCtx.createGain();
-  engineOsc.type = "sawtooth";
-  engineOsc.frequency.value = 80;
-  engineGain.gain.value = 0.03;
-  engineOsc.connect(engineGain).connect(audioCtx.destination);
+  engineFilter = audioCtx.createBiquadFilter();
+
+  engineOsc.type = "triangle";
+  engineOscLayer.type = "sine";
+
+  engineOsc.frequency.value = 88;
+  engineOscLayer.frequency.value = 44;
+
+  engineFilter.type = "lowpass";
+  engineFilter.frequency.value = 420;
+  engineFilter.Q.value = 0.6;
+
+  engineGain.gain.value = 0.022;
+
+  engineOsc.connect(engineFilter);
+  engineOscLayer.connect(engineFilter);
+  engineFilter.connect(engineGain).connect(audioCtx.destination);
+
   engineOsc.start();
+  engineOscLayer.start();
 }
 
 function stopEngineSound() {
   if (!engineOsc) return;
   engineOsc.stop();
+  engineOscLayer.stop();
   engineOsc.disconnect();
+  engineOscLayer.disconnect();
+  engineFilter.disconnect();
   engineGain.disconnect();
   engineOsc = null;
+  engineOscLayer = null;
+  engineFilter = null;
   engineGain = null;
 }
 
 function updateEnginePitch() {
   if (!engineOsc) return;
-  const pitch = 78 + state.worldSpeed * 18;
-  engineOsc.frequency.setTargetAtTime(pitch, audioCtx.currentTime, 0.06);
+  const pitch = 84 + state.worldSpeed * 11;
+  engineOsc.frequency.setTargetAtTime(pitch, audioCtx.currentTime, 0.08);
+  engineOscLayer.frequency.setTargetAtTime(pitch * 0.5, audioCtx.currentTime, 0.1);
+  engineFilter.frequency.setTargetAtTime(360 + state.worldSpeed * 28, audioCtx.currentTime, 0.12);
 }
 
 function resetGame() {
