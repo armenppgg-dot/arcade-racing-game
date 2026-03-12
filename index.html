@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arcade Racing Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-wrapper">
+      <header class="hud">
+        <div class="stat"><span class="label">Score</span><span id="score">0</span></div>
+        <div class="stat"><span class="label">Distance</span><span id="distance">0 m</span></div>
+        <div class="stat"><span class="label">Best</span><span id="best">0</span></div>
+        <button id="soundToggle" class="sound-btn" aria-label="Toggle sound">🔊 Sound</button>
+      </header>
+
+      <main id="gameArea" class="game-area" aria-label="Arcade racing track">
+        <div class="road"></div>
+        <div id="player" class="car player"></div>
+
+        <div id="startScreen" class="overlay visible">
+          <h1>Arcade Racing</h1>
+          <p>Объезжай флажки и машины как можно дольше.</p>
+          <p>Управление: ←/→ или A/D. На телефоне — кнопки ниже.</p>
+          <button id="startBtn" class="action-btn">Start</button>
+        </div>
+
+        <div id="gameOverScreen" class="overlay">
+          <h2>Game Over</h2>
+          <p id="finalStats"></p>
+          <button id="restartBtn" class="action-btn">Restart</button>
+        </div>
+      </main>
+
+      <div class="mobile-controls" aria-label="Mobile controls">
+        <button id="leftBtn" class="control-btn">◀</button>
+        <button id="rightBtn" class="control-btn">▶</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
