@@ -92,14 +92,7 @@ body {
 .road {
   position: absolute;
   inset: 0;
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0 36px,
-      rgba(255, 255, 255, 0.75) 36px 64px,
-      transparent 64px 110px
-    ),
-    linear-gradient(90deg, #1b232e 0 7%, #5f6268 7% 93%, #1b232e 93%);
+  background: linear-gradient(90deg, #1b232e 0 7%, #5f6268 7% 93%, #1b232e 93%);
   animation: roadScroll 0.9s linear infinite;
   opacity: 0.92;
 }
